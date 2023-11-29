@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>CSS Flag Project</title>
+        <style>
+            /* Write your CSS Code here */
+            .flag {
+                position: relative;
+                background-color: #ce1126;
+                height: 600px;
+                width: 900px;
+            }
+
+            .flag > p {
+                margin: 0;
+                text-align: center;
+                color: white;
+                font-size: 5rem;
+            }
+
+            .flag > div {
+                position: absolute;
+                background-color: #002868;
+                top: 150px;
+                height: 50%;
+                width: 100%;
+            }
+
+            .flag > div > div {
+                position: absolute;
+                margin-top: 150px;
+                margin-left: 50%;
+                transform: translate(-50%, -50%);
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background-color: white;
+            }
+
+            div > div > p {
+                margin: 0;
+                text-align: center;
+                font-size: 5rem;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="flag">
+            <p>The Flag</p>
+            <div>
+                <div>
+                    <p>of Laos</p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
