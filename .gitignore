@@ -1,4 +1,5 @@
-.vscode
-/zip
 *.pdf
-sorter.py
+.vscode
+package-lock.json
+zip/
+node_modules/
