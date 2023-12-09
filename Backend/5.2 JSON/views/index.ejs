@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Taco Recipes</title>
+        <link rel="stylesheet" type="text/css" href="/styles/main.css" />
+    </head>
+
+    <body>
+        <h1>Taco Town 🌮</h1>
+
+        <form action="/recipe" method="POST" class="buttons">
+            <button type="submit" value="chicken" name="choice">🍗</button>
+            <button type="submit" value="beef" name="choice">🥩</button>
+            <button type="submit" value="fish" name="choice">🐟</button>
+        </form>
+        <div id="recipeContainer" class="hidden">
+            <h2>
+                <% if (locals.recipe === "") { %> 
+                  Pick your favorite taco ingredient 👆 
+                <% } else { %>
+                  <%= recipe %> Taco 
+                <% } %>
+            </h2>
+
+            <h3>Ingredients:</h3>
+            <% if (locals.data === "") { %>
+            <ul id="ingredientsList">
+                <li>Protein name, protein preparation</li>
+                <li>Salsa name</li>
+                <li>Every other topping</li>
+            </ul>
+            <% } else { %>
+
+            <ul id="ingredientsList">
+                <li>
+                    <%= data.ingredients.protein.name %>, <%=
+                    data.ingredients.protein.preparation %>
+                </li>
+                <li><%= data.ingredients.salsa.name %></li>
+                <% data.ingredients.toppings.forEach(element => { %>
+                <li><%= element.quantity %> of <%= element.name %></li>
+                <% }) %>
+            </ul>
+
+            <% } %>
+        </div>
+    </body>
+</html>
